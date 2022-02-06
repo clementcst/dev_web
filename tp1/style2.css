@@ -1,0 +1,55 @@
+nav.premier ul li.bouton {
+    list-style-type: none;
+    display: inline-block;
+    margin: 20;
+
+
+}
+
+nav.premier ul li.bouton a {
+    color: black;
+    text-decoration: none;
+    background-color: yellow;
+    padding: 10px;
+    font-size: 20;
+}
+
+nav.premier ul li.bouton:hover a{
+    color: black;
+    background-color: white;
+    transition: 0.3s;
+}
+
+div.left{
+    background-color: yellow;
+    width: 50%;
+}
+
+div.right{
+    background-color: yellow;
+    width: 50%;
+    position: relative;
+    margin-left:50%;
+}
+
+div.all {
+    background-color: #fff;
+}
+
+h1.title {
+    font-family:Verdana;
+    font-style: italic;
+    text-decoration: underline;
+    font-size: 20px;
+
+}
+
+a.link {
+    color: red;
+    text-decoration: underline;
+}
+
+p.bloc {
+    font-size: 12px;
+}
+
