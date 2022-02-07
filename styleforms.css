@@ -1,0 +1,35 @@
+fieldset.left {
+    width: 75%;
+}
+
+fieldset.right  {
+    width:75%;
+}
+
+fieldset.right label {
+    font-size: 12px;
+}
+
+fieldset.right p {
+    font-size: 12px;
+}
+
+li {
+    list-style-type: none;
+}
+
+div.droite {
+   float:right ;
+    width: 50%;
+}
+
+div.gauche {
+    float: left;
+    width: 50%;
+}
+
+input.fin {
+    background-color: blue;
+    color: white;
+    margin 5px;
+}
