@@ -3,7 +3,7 @@
     <head>
         <title>mon premier formulmaire</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styleforms.css">
     </head>
 
     <header> 
@@ -22,9 +22,11 @@
         <input type="submit" value="Envoyer">  
     </form>-->
         
-        <fieldset>
-            
-                 <legend>Informations personnelles</legend>
+       
+        <forms>
+            <div class="gauche">
+            <fieldset class="left">
+                <legend>Informations personnelles</legend>  
                 <label for="Nom">Nom</label><br>
                 <input type="text" name="Nom" id="Nom" placeholder="Nom" ><br><br>
                 <label for="Prenom">Prenom</label><br>
@@ -47,13 +49,98 @@
                     <option value="MCA">MCA</option>
                     <option value="MCB">MCB</option>
                 </select><br><br><br>
-             <label for="lastdiplome">Dernier Diplome</label><br>
-            <input type="text" name="diplome" id="diplome" placeholder="Dernier diplôme" ><br><br>
+                <label for="lastdiplome">Dernier Diplome</label><br>
+                <input type="text" name="diplome" id="diplome" placeholder="Dernier diplôme" ><br><br> 
+                </fieldset>
+                
+                </div>
             
-                 
+                <div class="droite">
+            <fieldset class="right">
+                <legend>Enseignements de Recherches</legend>
+                <p> + Modules Théoriques</p>
+                <ul>
+                    <li> 
+                        <input type="checkbox" name="theographes" id="theographes">
+                         <label for="theographes">Théorie des Graphes</label>
+                    </li>
+                    <li> 
+                        <input type="checkbox" name="theolanguages" id="theolanguage">
+                         <label for="ModuleTh">Théorie des Languages</label>
+                    </li>
+                    <li> 
+                        <input type="checkbox" name="lomath" id="lomath">
+                         <label for="lomath">Logiques Mathematiques</label>
+                    </li>
+                </ul>
+                
+                <p> + Modules de programmation</p>
+                <ul>
+                    <li> 
+                        <input type="checkbox" name="algo" id="algo">
+                         <label for="algo">Algorithmique</label>
+                    </li>
+                    <li> 
+                        <input type="checkbox" name="progobjet" id="progobjet">
+                         <label for="progobjet">Programmation objets</label>
+                    </li>
+                    <li> 
+                        <input type="checkbox" name="progweb" id="progweb">
+                         <label for="progweb">Programmation Web</label>
+                    </li>
+                     <li> 
+                        <input type="checkbox" name="progfonct" id="progfonct">
+                         <label for="progfonct">Programmation fonctionnelle</label>
+                    </li>
+                     <li> 
+                        <input type="checkbox" name="assemb" id="assemb">
+                         <label for="assemb">Assembleur</label>
+                    </li>
+                </ul>
+                
+                <p> + Modules de Conception et analyse</p>
+                <ul>
+                    <li> 
+                        <input type="checkbox" name="Genilog" id="Genilog">
+                         <label for="Genilog">Génie logiciel</label>
+                    </li>
+                    <li> 
+                        <input type="checkbox" name="database" id="database">
+                         <label for="database">Base de données</label>
+                    </li>
+                    <li> 
+                        <input type="checkbox" name="database+" id="database+">
+                         <label for="database+">Base de données avancées</label>
+                    </li>
+                    <li> 
+                        <input type="checkbox" name="database+" id="database+">
+                         <label for="database+">Base de données avancées</label>
+                    </li>
+                    <li> 
+                        <input type="checkbox" name="database+" id="database+">
+                         <label for="database+">Base de données avancées</label>
+                    </li>
+                    <li> 
+                        <input type="checkbox" name="database+" id="database+">
+                         <label for="database+">Base de données avancées</label>
+                    </li>
+                    <li> 
+                        <input type="checkbox" name="database+" id="database+">
+                         <label for="database+">Base de données avancées</label>
+                    </li>
+                </ul>
+                
+                <input class="fin" type="submit" value="Sauvegarder">
+                <input class="fin" type="submit" value="Annuler">
 
 
-        </fieldset>
+        
+            
+            </fieldset>
+                    </div>
+            
+            
+        </forms>
         
     </body>
     
