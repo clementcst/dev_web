@@ -1,0 +1,60 @@
+body {
+    font-family: 'Trebuchet MS' ; 
+    background-color: beige;
+}
+p.titre {
+    font-size:2em;
+}
+
+nav.menu ul li {
+    display :inline-block;
+    margin-right: 20px;
+}
+nav.menu ul {
+    margin-left: -06%;
+}
+
+header {
+    border: solid brown 3px;
+}
+
+aside {
+    font-family:aside;
+    width:45%;
+    font-size:1.4em;
+    float:right;
+    margin:4%;
+}
+p.debut {
+    width:450px;
+}
+
+div.latete{
+    width:50%;
+    margin-left:25%;
+}
+
+div.globale {
+    display: flex;
+    flex-direction: row;
+    border: solid brown 3px;
+}
+
+div.gauche {
+    width:50%;
+    display: center;
+    margin-left:25%;
+}
+
+div.droite {
+    margin-top: 3%;
+}
+
+footer {
+width:60%;
+float:right;
+}
+footer ul li {
+    display:inline-block;
+    margin-right: 20px;
+}
