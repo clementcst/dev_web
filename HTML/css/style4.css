@@ -1,0 +1,84 @@
+body {
+    background-color:#af190e;
+}
+
+header {
+    position: relative;
+    width:50%;
+    background-color: rgb(119, 0, 0);
+    margin-left:25%;
+    border-style:solid;
+    border-width:3px;
+    border-color: orange;
+
+}
+
+img.tete {
+    margin-top:8px;
+}
+
+div.box{
+    font-size:17px;
+    font-style:Verdana;
+    width:32%;
+    color:white;
+    background-color:#cc0033;
+    text-align:center;
+    margin-bottom: 3%;
+}
+div.box p {
+    margin:5%;
+}
+
+
+div.container {
+    display: flex;
+    flex-direction: row;
+    font-style:Verdana;
+    justify-content: space-around;
+
+}
+
+div.ingredient {
+    width:18%;
+    margin-left:2.5%;
+    color:solid black;
+    background-color:rgb(221, 200, 161);
+    border: solid orange 3px;
+
+}
+
+div.titre {
+    background-color: white;
+    color: red;
+    font-family:Impact;
+    border: solid red 2px;
+    padding:1%;
+
+}
+
+div.phasestech {
+    width:50%;
+    height:82%;
+    margin-left:4%;
+    color: black;
+    background-color:rgb(221, 200, 161);
+    border: solid orange 3px;
+}
+
+div.globale {
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-start;
+}
+
+div.conseils{
+    width:95%;
+    margin-bottom: 3%;
+    margin-left:3%;
+    margin-right:100%;
+    color:black;
+    background-color:rgb(221, 200, 161);
+    border: solid orange 3px;
+
+}
