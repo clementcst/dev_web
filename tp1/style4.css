@@ -18,14 +18,13 @@ img.tete {
 }
 
 div.box{
-    font-size:13px;
+    font-size:17px;
     font-style:Verdana;
-    width:31%;
+    width:32%;
     color:white;
     background-color:#cc0033;
-    display: inline-block;
     text-align:center;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
 }
 div.box p {
     margin:5%;
@@ -52,6 +51,7 @@ div.ingredient {
 div.titre {
     background-color: white;
     color: red;
+    font-family:Impact;
     border: solid red 2px;
     padding:1%;
 
