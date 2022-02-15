@@ -1,60 +1,84 @@
 body {
-    font-family: 'Trebuchet MS' ; 
-    background-color: beige;
-}
-p.titre {
-    font-size:2em;
-}
-
-nav.menu ul li {
-    display :inline-block;
-    margin-right: 20px;
-}
-nav.menu ul {
-    margin-left: -06%;
+    background-color:#af190e;
 }
 
 header {
-    border: solid brown 3px;
-}
-
-aside {
-    font-family:aside;
-    width:45%;
-    font-size:1.4em;
-    float:right;
-    margin:4%;
-}
-p.debut {
-    width:450px;
-}
-
-div.latete{
+    position: relative;
     width:50%;
+    background-color: rgb(119, 0, 0);
     margin-left:25%;
+    border-style:solid;
+    border-width:3px;
+    border-color: orange;
+
+}
+
+img.tete {
+    margin-top:8px;
+}
+
+div.box{
+    font-size:13px;
+    font-style:Verdana;
+    width:31%;
+    color:white;
+    background-color:#cc0033;
+    display: inline-block;
+    text-align:center;
+    margin-bottom: 2%;
+}
+div.box p {
+    margin:5%;
+}
+
+
+div.container {
+    display: flex;
+    flex-direction: row;
+    font-style:Verdana;
+    justify-content: space-around;
+
+}
+
+div.ingredient {
+    width:18%;
+    margin-left:2.5%;
+    color:solid black;
+    background-color:rgb(221, 200, 161);
+    border: solid orange 3px;
+
+}
+
+div.titre {
+    background-color: white;
+    color: red;
+    border: solid red 2px;
+    padding:1%;
+
+}
+
+div.phasestech {
+    width:50%;
+    height:82%;
+    margin-left:4%;
+    color: black;
+    background-color:rgb(221, 200, 161);
+    border: solid orange 3px;
 }
 
 div.globale {
     display: flex;
-    flex-direction: row;
-    border: solid brown 3px;
+    flex-direction:row;
+    justify-content: flex-start;
 }
 
-div.gauche {
-    width:50%;
-    display: center;
-    margin-left:25%;
-}
+div.conseils{
+    width:95%;
+    margin-bottom: 3%;
+    margin-left:3%;
+    margin-right:100%;
+    color:black;
+    background-color:rgb(221, 200, 161);
+    border: solid orange 3px;
 
-div.droite {
-    margin-top: 3%;
-}
-
-footer {
-width:60%;
-float:right;
-}
-footer ul li {
-    display:inline-block;
-    margin-right: 20px;
 }
