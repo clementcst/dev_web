@@ -10,9 +10,14 @@
         <div class="globale">
             <br><center></enter><b>LA CALCULETTE :</b></center>
             <div class="calculatrice"> 
-                <input class="resultat" id="output"/>
+                <div class="resultat" ><p id="output"></p></div> 
                 <div class="corps">
                     <table class="menu-gauche">
+                        <tr>
+                            <td><button onclick="afficher('(')">(</button></td>
+                            <td><button onclick="afficher(')')">)</button></td>
+                            <td><button onclick="supprimer()"> ←</button></td>
+                        </tr>
                         <tr>
                             <td><button onclick="afficher('1')">1</button></td>
                             <td><button onclick="afficher('2')">2</button></td>
@@ -37,24 +42,39 @@
 
                     <table class="menu-droit" >
                         <tr>
-                            <td><button onclick="effacer()" class="effacer">C</button></td>
+                            <td colspan="2"><button onclick="effacer()" class="effacer">C</button></td>
+                            
                         </tr>
                         <tr>
                             <td><button onclick="afficher('+')" class="calculateur">+</button></td>
+                            <td><button onclick="afficher('Math.sin(')" class="calculateur">sin</button></td>
                         </tr>
                         <tr>
                             <td ><button onclick="afficher('-')" class="calculateur">-</button></td>
+                            <td><button onclick="afficher('Math.cos(')" class="calculateur">cos</button></td>
                         </tr>
                         <tr>
                             <td><button onclick="afficher('*')" class="calculateur">*</button></td>
+                            <td><button onclick="afficher('Math.sin(')" class="calculateur">tan</button></td>
                         </tr>
                         <tr>
                             <td><button onclick="afficher('/')" class="calculateur">/</button></td>
+                            <td><button onclick="puissance('Math.pow(')" class="calculateur">pui</button></td>                        
                         </tr>
+                        <tr>
+                            <td><button onclick="afficher('Math.exp(')" class="calculateur">exp</button></td>
+                            <td><button onclick="afficher('Math.log(')" class="calculateur">log</button></td>                        
+                        </tr>
+
                     </table>
                 </div>
             </div> 
-        </div>  
+        </div> 
+        <br><br>
+
+        <ul>
+            <li>Les angles pour les calculs de sin/cos/tan doivent être rentrés en radians.</li>
+        </ul>
 
     </body>
 
