@@ -2,10 +2,8 @@ function ajouter() {
     
     //var artiste = document.getElementsById('add').value;
     /*var taille = artiste.length-1;
-
     artiste=artiste.substr(0,1).toUpperCase()+artiste.substr(1,taille).toLowerCase();
     var select = document.getElementById('liste');
-
         for (i=0; i<select.taille;i++){
             if (artiste == select.children[i].text){
                 
