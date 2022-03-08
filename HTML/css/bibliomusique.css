@@ -1,4 +1,3 @@
-
 .middle1 {
     width:25%;
     margin-left:37.5%;
@@ -10,4 +9,8 @@
     width:25%;
     margin-left:35%;
     margin-top:20px;
+}
+
+html {
+    background: url('https://img.hebus.com/hebus_2008/12/02/preview/081202181115_97.jpg');
 }
