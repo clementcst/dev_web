@@ -10,24 +10,22 @@
         
         <center><b style="font-size:33px;">Liste des artiste :</b></center> 
 
-        <select id="liste" class="middle1" >
-            <option onclick="Openimage('')" value="premier">Bob Dylan</option>
-            <option value="deuxieme">David Bowie</option>
-            <option value="troisieme">Robert Palmer</option>
-            <option value="quatrieme">Eric Clapton</option>                
-            <option value="cinquieme">Elvis Presley</option>
+        <select onchange="affiche()" id="liste" class="middle1" >
+            <option  value="premier">Bob dylan</option>
+            <option value="deuxieme">David bowie</option>
+            <option value="troisieme">Robert palmer</option>
+            <option value="quatrieme">Eric clapton</option>                
+            <option value="cinquieme">Elvis presley</option>
         </select>
         <br><br><br><br>
 
             <center><b style="font-size:25px;">Ajouter un artiste</b></center>
-            <input class="middle2" type="text" id="add">               
-             <button  onclick="ajouter()">Valider</button>
+            <input class="middle2"  id="add"> <button  onclick="ajouter()">Valider</button>
             
         <br><br><br><br>
 
             <center><b style="font-size:25px;">Supprimer un artiste</b></center>
-            <input class="middle2" type="text" id="supprimer">                
-            <button  onclick="sup()">Valider</button>
+            <input class="middle2"  id="supprimer"> <button  onclick="sup()">Valider</button>
     </body>   
 
 </html>
