@@ -1,281 +1,201 @@
 <style>
-html { 
-  background: url('https://static.papergeek.fr/2017/03/harry-potter-poudlard-sorciers-angleterre.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  overflow: hidden;
-}
-body {
-  width: 100%;
-  text-align: center;
-}
-footer {
-  color: white;
-  bottom: 0;
-}
-#Jeu {
-  display: inline-block;
-  margin: 0 auto;
-  padding: 10px;
-}
-
-#Jeu div {
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-#Jeu button {
-  width: 100px;
-  height: 100px;
-  font-weight: bold;
-  font-size: 0px;
-  margin: 5px;
-  color: transparent;
-  float:left;
-}
-
-#StatutJeu {
-  color: black;
-  background: #eee;
-  padding: 10px 0;
-  text-align: center;
-  font-size: 20px;
-}
-
-  </style>
-  
-  <h1>Jeu du Morpion : thème Harry Potter</h1>
-    <table id="jeu">
-      <tr>
-          <td><button></button></td>
-          <td><button></button></td>
-          <td><button></button></td>
-      </tr>
-      <tr>
-          <td><button></button></td>
-          <td><button></button></td>
-          <td><button></button></td>
-      </tr>            
-      <tr>
-          <td><button></button></td>
-          <td><button></button></td>
-          <td><button></button></td>
-      </tr>
-  </table>
-  <div id="StatutJeu"></div>
-  </div>
-</div>
-<footer>
-  
-<audio controls autoplay>
-	<source src="http://test.volgac.fr/the_dueling_club.mp3" type="audio/mp3">
-</audio>
-<br>On pourra lire la musique pour mettre un peu d'ambiance...
-</footer>
-<script>
-function estValide(button) {
-  return button.innerHTML.length == 0;
-}
-
-function setSymbol(btn, symbole) {
-  btn.innerHTML = symbole;
-  if (symbole == "G"){
-	btn.style.backgroundImage = "url('img/fond1.png')";
-	}
-  else{
-	btn.style.backgroundImage = "url('img/fond2.png')";
-	}
-}
-
-
-function rechercherVainqueur(pions, joueurs, tour){
-  var r = Math.sqrt(pions.length);
-  for (var i = 0; i < r ; i++){
-    var u = i;  var cpt = 0;
-    while (cpt < r && pions[u].innerHTML == joueurs[tour]){
-      u+=r; cpt++;
+    html { 
+      background: url('https://ns328286.ip-37-187-113.eu/ew/wallpapers/800x480/02625_800x480.jpg') no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      overflow: hidden;
     }
-    if (cpt==r) {return true}
-  }
-
-  for (var i = 0; i < r ; i+=4){
-    var u = i; var cpt = 0;
-    while (cpt < r && pions[u].innerHTML == joueurs[tour]){
-      u++; cpt++;
+    body {
+      width: 100%;
+      text-align: center;
     }
-    if (cpt==r) {return true}
-  }
-
-  for (var i = 0 ; i <=r; i+(r-1)){
-    var u = i; cpt = 0;
-    while (cpt < r && pions[u].innerHTML == joueurs[tour]){
-      u+=(r+1); cpt++;
+    footer {
+      color: white;
+      bottom: 0;
     }
-    if (cpt==r) {return true}
-  }
-
-}
-
-/*
-function rechercherVainqueur(pions, joueurs, tour) {
-  if (
-    pions[0].innerHTML == joueurs[tour] &&
-    pions[1].innerHTML == joueurs[tour] &&
-    pions[2].innerHTML == joueurs[tour]
-  ) {
-    pions[0].style.backgroundColor = "#9ACD32";
-    pions[1].style.backgroundColor = "#9ACD32";
-    pions[2].style.backgroundColor = "#9ACD32";
-    return true;
-  }
-
-  if (
-    pions[3].innerHTML == joueurs[tour] &&
-    pions[4].innerHTML == joueurs[tour] &&
-    pions[5].innerHTML == joueurs[tour]
-  ) {
-    pions[3].style.backgroundColor = "#9ACD32";
-    pions[4].style.backgroundColor = "#9ACD32";
-    pions[5].style.backgroundColor = "#9ACD32";
-    return true;
-  }
-
-  if (
-    pions[6].innerHTML == joueurs[tour] &&
-    pions[7].innerHTML == joueurs[tour] &&
-    pions[8].innerHTML == joueurs[tour]
-  ) {
-    pions[6].style.backgroundColor = "#9ACD32";
-    pions[7].style.backgroundColor = "#9ACD32";
-    pions[8].style.backgroundColor = "#9ACD32";
-    return true;
-  }
-
-  if (
-    pions[0].innerHTML == joueurs[tour] &&
-    pions[3].innerHTML == joueurs[tour] &&
-    pions[6].innerHTML == joueurs[tour]
-  ) {
-    pions[0].style.backgroundColor = "#9ACD32";
-    pions[3].style.backgroundColor = "#9ACD32";
-    pions[6].style.backgroundColor = "#9ACD32";
-    return true;
-  }
-
-  if (
-    pions[1].innerHTML == joueurs[tour] &&
-    pions[4].innerHTML == joueurs[tour] &&
-    pions[7].innerHTML == joueurs[tour]
-  ) {
-    pions[1].style.backgroundColor = "#9ACD32";
-    pions[4].style.backgroundColor = "#9ACD32";
-    pions[7].style.backgroundColor = "#9ACD32";
-    return true;
-  }
-
-  if (
-    pions[2].innerHTML == joueurs[tour] &&
-    pions[5].innerHTML == joueurs[tour] &&
-    pions[8].innerHTML == joueurs[tour]
-  ) {
-    pions[2].style.backgroundColor = "#9ACD32";
-    pions[5].style.backgroundColor = "#9ACD32";
-    pions[8].style.backgroundColor = "#9ACD32";
-    return true;
-  }
-
-  if (
-    pions[0].innerHTML == joueurs[tour] &&
-    pions[4].innerHTML == joueurs[tour] &&
-    pions[8].innerHTML == joueurs[tour]
-  ) {
-    pions[0].style.backgroundColor = "#9ACD32";
-    pions[4].style.backgroundColor = "#9ACD32";
-    pions[8].style.backgroundColor = "#9ACD32";
-    return true;
-  }
-
-  if (
-    pions[2].innerHTML == joueurs[tour] &&
-    pions[4].innerHTML == joueurs[tour] &&
-    pions[6].innerHTML == joueurs[tour]
-  ) {
-    pions[2].style.backgroundColor = "#9ACD32";
-    pions[4].style.backgroundColor = "#9ACD32";
-    pions[6].style.backgroundColor = "#9ACD32";
-    return true;
-  }
-}*/
-
-function matchNul(pions) {
-  for (var i = 0, len = pions.length; i < len; i++) {
-    if (pions[i].innerHTML.length == 0) return false;
-  }
-
-  return true;
-}
-
-var Afficheur = function(element) {
-  var affichage = element;
-
-  function setText(message) {
-    affichage.innerHTML = message;
-  }
-
-  return { sendMessage: setText };
-};
-
-function main() {
-  var pions = document.querySelectorAll("#Jeu button");
-  var joueurs = ["G", "S"];
-  var tour = 0;
-  var jeuEstFini = false;
-  var afficheur = new Afficheur(document.querySelector("#StatutJeu"));
-  afficheur.sendMessage(
-    "Le jeu peut commencer ! <br /> Joueur " +
-      joueurs[tour] +
-      " c'est votre tour."
-  );
-  
-  for (var i = 0, len = pions.length; i < len; i++) {
-    pions[i].addEventListener("click", function() {
-      if (jeuEstFini) return;
-
-      if (!estValide(this)) {
-        afficheur.sendMessage(
-          "Case occupée ! <br />Joueur " +
-            joueurs[tour] +
-            " c'est toujours à vous !"
-        );
-      } else {
-        setSymbol(this, joueurs[tour]);
-        jeuEstFini = rechercherVainqueur(pions, joueurs, tour);
-
-      if (jeuEstFini) {
-          afficheur.sendMessage(
-            "Le joueur " +
-              joueurs[tour] +
-              ' a gagné ! <br /> <a href="index.html">Recommencer</a>'
-          );
-          return;
+    #Jeu {
+      display: inline-block;
+      margin: 0 auto;
+      padding: 10px;
+    }
+    
+    #Jeu div {
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    
+    #Jeu button {
+      width: 100px;
+      height: 100px;
+      font-weight: bold;
+      font-size: 0px;
+      margin: 5px;
+      color: transparent;
+      float:left;
+    }
+    
+    #StatutJeu {
+      color: black;
+      background: #eee;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 20px;
+    }
+    
+      </style>
+      
+      <h1 style="color:rgb(176, 227, 240)">Jeu du Morpion : thème Harry Potter</h1>
+        <table id="jeu">
+          <tr>
+              <td><button></button></td>
+              <td><button></button></td>
+              <td><button></button></td>
+              <td><button></button></td>
+          </tr>
+          <tr>
+              <td><button></button></td>
+              <td><button></button></td>
+              <td><button></button></td>
+              <td><button></button></td>
+          </tr>            
+          <tr>
+              <td><button></button></td>
+              <td><button></button></td>
+              <td><button></button></td>
+              <td><button></button></td>
+          </tr>
+          <tr>
+            <td><button></button></td>
+            <td><button></button></td>
+            <td><button></button></td>
+            <td><button></button></td>
+        </tr>
+      </table>
+      <div id="StatutJeu"></div>
+      </div>
+    </div>
+    <footer>
+      <br><audio controls src="img/bob-dylan-hurricane-official-audio.mp3">
+        Ton navigateur ne supporte pas <code>audio</code>alement.
+      </audio>
+    <br>On pourra lire la musique pour mettre un peu d'ambiance...
+    </footer>
+    <script>
+    
+    function verifie(button) {
+      return button.innerHTML.length == 0;
+    }
+    
+    function click(btn, symbole) {
+      btn.innerHTML = symbole;
+      if (symbole == "G"){
+        btn.style.backgroundImage = "url('img/fond1.png')";
         }
-
-        if (matchNul(pions)) {
-          afficheur.sendMessage(
-            'Match Nul ! <br/> <a href="index.html">Recommencer</a>'
-          );
-          return;
+      else{
+        btn.style.backgroundImage = "url('img/fond2.png')";
         }
-
-        tour++;
-        tour = tour % 2;
-        afficheur.sendMessage("Joueur " + joueurs[tour] + " c'est à vous !");
+    }
+    
+    
+    function joue(pions, joueurs, tour){
+      var r = Math.sqrt(pions.length);
+      for (var i = 0; i < r ; i++){
+        var u = i;  var cpt = 0;
+        while (cpt < r && pions[u].innerHTML == joueurs[tour]){
+          u+=r; cpt++;
+        }
+        if (cpt==r) {return true}
       }
-    });
-  }
-}
-
-main();
-</script>
+      for (i = 0; i < r*r ; i+=r){
+         u = i; cpt = 0;
+        while (cpt < r && pions[u].innerHTML == joueurs[tour]){
+          u++; cpt++;
+        }
+        if (cpt==r) {return true}
+      }
+        u = 0; cpt = 0;
+        while (cpt < r && pions[u].innerHTML == joueurs[tour]){
+          u+=(r+1); cpt++;
+        }
+        if (cpt==r) {return true}
+      
+        u = r-1; cpt = 0;
+        while (cpt < r && pions[u].innerHTML == joueurs[tour]){
+          u+=(r-1); cpt++;
+        }
+        if (cpt==r) {return true}
+    }
+    
+    
+    function matchNul(pions) {
+      for (var i = 0, len = pions.length; i < len; i++) {
+        if (pions[i].innerHTML.length == 0) return false;
+      }
+    
+      return true;
+    }
+    
+    var Afficheur = function(element) {
+      var affichage = element;
+    
+      function setText(message) {
+        affichage.innerHTML = message;
+      }
+    
+      return { sendMessage: setText };
+    };
+    
+    function main() {
+      var pions = document.querySelectorAll("#Jeu button");
+      var joueurs = ["G", "S"];
+      var tour = 0;
+      var jeuEstFini = false;
+      var afficheur = new Afficheur(document.querySelector("#StatutJeu"));
+      afficheur.sendMessage(
+        "Le jeu peut commencer ! <br /> Joueur " +
+          joueurs[tour] +
+          " c'est votre tour."
+      );
+      
+      for (var i = 0, len = pions.length; i < len; i++) {
+        pions[i].addEventListener("click", function() {
+          if (jeuEstFini) return;
+    
+          if (!verifie(this)) {
+            afficheur.sendMessage(
+              "Case occupée ! <br />Joueur " +
+                joueurs[tour] +
+                " c'est toujours à vous !"
+            );
+          } else {
+            click(this, joueurs[tour]);
+            jeuEstFini = joue(pions, joueurs, tour);
+    
+          if (jeuEstFini) {
+              afficheur.sendMessage(
+                "Le joueur " +
+                  joueurs[tour] +
+                  ' a gagné ! <br /> <a href="morpion.html">Recommencer</a>'
+              );
+              return;
+            }
+    
+            if (matchNul(pions)) {
+              afficheur.sendMessage(
+                'Match Nul ! <br/> <a href="morpion.html">Recommencer</a>'
+              );
+              return;
+            }
+    
+            tour++;
+            tour = tour % 2;
+            afficheur.sendMessage("Joueur " + joueurs[tour] + " c'est à vous !");
+          }
+        });
+      }
+    }
+    
+    main();
+    </script>
