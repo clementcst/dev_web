@@ -3,20 +3,20 @@
 <html>
 
 	<head>
-		<title>Formaulaire Clément</title>
+		<title>Formulaire Clément</title>
 		<meta charset="utf-8">
-        <link rel="stylesheet" href="css/Formulaire.css">
-		<script src="js/Formulaire.js"></script>
+        <link rel="stylesheet" href="css/formulaire.css">
+		<script src="js/formulaire.js"></script>
 	</head>
-	
+
 	<body>
 	
 		<br>
 		<center><h1>Ajout d'un enseignement</h1></center>
-	
+
 		<br>
 		
-		<form action="">
+		<form action="" method="post" onsubmit="return controle()">
 
 		<fieldset>   <!-- fieldset globale contenant les deux parties du formualire-->
 
@@ -26,19 +26,22 @@
 					<br>
 				
 					<!-- La patie informations personnelles-->
-					<label for="prenom">Prénom</label> <br>
-					<input type="text" id="prenom" name="prenom" placeholder="Prénom">
+					<label >Prénom</label> <br>
+					<input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom">
+					<div id="erreurprenom"></div>
 					<br><br>
 			
 					<label for="nom">Nom</label> <br>
-					<input type="text" id="nom" name="nom" placeholder="Nom"><br><br>
+					<input type="text" id="nom" name="nom" placeholder="Nom">
+					<div id="erreurnom"></div><br><br>
 			
 					<label for="email">Email</label> <br> 
 					<input type="email" id="email" name="email" placeholder="Email">
-					<abbr title="L'email est unique dans la base">?</abbr><br><br>
+					<div id="erreuremail"></div><br><br>
 			
 					<label for="email">Confirmation email</label> <br>
-					<input type="email" id="email" name="email" placeholder="Confirmez votre email"><br><br>
+					<input type="email" id="email2" name="email" placeholder="Confirmez votre email">
+					<div id="erreuremail2"></div><br><br>
 			
 					<label for="birthday">Date de naissance</label> <br>
 					<input type="date" id="birthday" name="birthday"><br><br>
