@@ -1,26 +1,52 @@
-<?php
-    echo "Bonjour tout le monde <br>";
-    echo "On est le ".date('d/m/Y')." , et il est actuellement ".date('H')."h et ".date('i')."min <br><br><br>"; 
+<!DOCTYPE html>
+<html>
 
-$Giroud = array("Giroud", "Olivier", "30/09/1986", "Attaquant");
-$Griezmann = array("Griezmann", "Antoine", "21/03/1991", "Attaquant");
-$Mbappe = array("Mbappé", "Kylian", "20/11/1998", "Attaquant");
-$Kante = array("Kante", "N'Golo", "28/03/1991", "Milieu");
-$Umtiti = array("Umtiti", "samuel", "14/09/1993", "Defenseur");
-$LLoris = array("Lloris", "Hugo", "26/12/1986", "Gardien");
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    
+    
+    <?php
+        echo "Bonjour tout le monde <br>";
+        echo "On est le ".date('d/m/Y')." , et il est actuellement ".date('H')."h et ".date('i')."min <br><br><br>";
+    ?>
+    <br><br>
+    <h2>Voici le tableau des joueurs de foot !</h2>
+    <table border='1'>
+    <tr>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Date de naissance</th>
+        <th>Poste</th>
+        <th>Age</th>
+    </tr>
+    <?php 
+
+    function trouveage($agr1){
+        $aujourdhui = date("Y-m-d");
+        $diff = date_diff(date_create($agr1),date_create($aujourdhui));
+        return $diff->format('%y');
+   }
 
 
-$tab=array($Giroud,$Greizmann,$Mbappe,$Kante,$Umtiti,$Lloris);
+    $personne=array(array("Nom" => "Giroud","Prenom" => "Olivier","Date" => "30/09/1986", "Poste" =>"Attaquant", "Age" => trouveage("30-09-1986") ),
+    array("Nom" => "Griezmann","Prenom" => "Antoine","Date" => "21/03/1991", "Poste" =>"Attaquant", "Age" =>  trouveage("21-03-1991") ),
+    array("Nom" => "Mbappé","Prenom" => "Kylian","Date" => "20/11/1991", "Poste" =>"Attaquant", "Age" =>  trouveage("20-11-1998") ),
+    array("Nom" => "Kante","Prenom" => "N'Golo","Date" => "28/03/1991", "Poste" =>"Milieu", "Age" =>  trouveage("28-03-1991") ),
+    array("Nom" => "Umtiti","Prenom" => "samuel","Date" => "14/09/1993", "Poste" =>"Defenseur", "Age" =>  trouveage("14-09-1993") ),
+    array("Nom" => "Lloris","Prenom" => "Hugo","Date" => "26/12/1986", "Poste" =>"Gardien", "Age" =>  trouveage("26-12-1986") ));
 
-echo "<table border=collapse\"3\">";
-echo "<th>Nom <th>Prénom <th>date de naissance <th>Poste";
-
-$cpt = 0;
-for ($i=0; $i<5; $i++){
-    echo "<tr>";
-    for ($j=0;$j<4;$j++){
-        echo "<td>".$tab[$i][$j];
+    for ($i=0;$i<sizeof($personne);$i++){
+        echo "<tr>";
+        foreach($personne[$i] as $key => $j){
+            echo "<td>".$j."</td>";
+        }
+        echo "</tr>";
     }
-}
+    ?>
+    </table>
+</body>
 
-?>
+</html>
