@@ -42,28 +42,29 @@
 
                     <table class="menu-droit" >
                         <tr>
-                            <td colspan="2"><button onclick="effacer()" class="effacer">C</button></td>
+                            <td ><button onclick="afficher('π')" class="haut">π</button></td>
+                            <td ><button onclick="effacer()" class="effacer">C</button></td>
                             
                         </tr>
                         <tr>
                             <td><button onclick="afficher('+')" class="calculateur">+</button></td>
-                            <td><button onclick="afficher('Math.sin(')" class="calculateur">sin</button></td>
+                            <td><button onclick="afficher('sin(')" class="calculateur">sin</button></td>
                         </tr>
                         <tr>
                             <td ><button onclick="afficher('-')" class="calculateur">-</button></td>
-                            <td><button onclick="afficher('Math.cos(')" class="calculateur">cos</button></td>
+                            <td><button onclick="afficher('cos(')" class="calculateur">cos</button></td>
                         </tr>
                         <tr>
                             <td><button onclick="afficher('*')" class="calculateur">*</button></td>
-                            <td><button onclick="afficher('Math.sin(')" class="calculateur">tan</button></td>
+                            <td><button onclick="afficher('sin(')" class="calculateur">tan</button></td>
                         </tr>
                         <tr>
                             <td><button onclick="afficher('/')" class="calculateur">/</button></td>
-                            <td><button onclick="puissance('Math.pow(')" class="calculateur">pui</button></td>                        
+                            <td><button onclick="afficher('log(')" class="calculateur">log</button></td>                        
                         </tr>
                         <tr>
-                            <td><button onclick="afficher('Math.exp(')" class="calculateur">exp</button></td>
-                            <td><button onclick="afficher('Math.log(')" class="calculateur">log</button></td>                        
+                            <td><button onclick="afficher('e^(')" class="calculateur">exp</button></td>
+                            <td ><button  onclick="allumage=allumer()" class="calculateur"><a id="statut" style='color:#dd0303'>on</a></button></td>                         
                         </tr>
 
                     </table>
@@ -74,7 +75,11 @@
 
         <ul>
             <li>Les angles pour les calculs de sin/cos/tan doivent être rentrés en radians.</li>
+            <li>Les opérations avec sin/cos/tan/log nécéssitent une paranthèse fermante pour fonctionner</li>
+            <li>Pour allumer la calculatrice, vous devez appuyer sur le bouton "on", si le bouton est rouge c'est que la calculatrice est éteinte, et à l'inverse si il est vert c'est qu'elle est allumée.</li>
         </ul>
+
+        <p>CASSIET Clément Preing Ing 2 MI Groupe 1</p>
 
     </body>
 
