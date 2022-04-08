@@ -1,0 +1,82 @@
+/* disque */
+body {
+	background-color: #6d6db6;
+}
+
+#titre {
+	text-align: center;
+	border: 3px solid black;
+	margin-left: 35%;
+	margin-right: 35%;
+	background-color: #969696;
+}
+
+#prix {
+	color: yellow;
+}
+#cadre {
+	margin: 15px;
+	padding: 15px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between ;
+}
+
+#source {
+	text-align: center;
+	border: 3px solid red;
+	width: 30%;
+	padding: 5px;
+	background-color: #017701;
+}
+
+#vitrine {
+	display : flex;
+	justify-content: space-between ;
+	flex-wrap: wrap;
+}	
+
+#destination {
+	text-align: center;
+	border: 3px solid #003300;
+	width: 30%;
+	padding: 5px;
+	background-color: red;
+}
+
+#panier {
+	font-weight: bold;
+	font-size: 14pt;
+	color: yellow;
+	display : flex;
+	flex-wrap: wrap;
+	justify-content: space-between ;
+}
+
+hr {
+	border: 2px solid white;
+}
+
+img {
+	width: 100px;
+	height: 100px;
+	margin: 5px;
+	border: 1px solid black;
+
+}
+
+.form-submit-button {
+    color: white;
+    font: bold 15px arial, sans-serif;
+    text-shadow: none;
+    background: rgb(146, 163, 68);
+    border-style: outset;
+    border-color: black;
+    border-radius: 20px;
+}
+
+.form-submit-button:hover {
+    color: black;
+    background: rgb(202, 235, 56);
+    border-color: rgb(147, 180, 28);
+}
